@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu - JayZwink Web Development Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <style>
+        /* Copy the CSS from your main page or create a simplified version */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e3dce0 0%, #8ec5fc 50%, #ff00db 100%);
+            min-height: 100vh;
+        }
+
+        .edu-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .edu-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .edu-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, #8ec5fc, #ff00db);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .edu-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .edu-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .edu-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .edu-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, #8ec5fc, #ff00db);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .edu-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .edu-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .edu-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(to right, #8ec5fc, #ff00db);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .edu-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(142, 197, 252, 0.4);
+        }
+
+        /* Add responsive design */
+        @media (max-width: 768px) {
+            .edu-container {
+                margin: 80px 20px 30px;
+                padding: 20px;
+            }
+
+            .edu-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- You could copy your navbar from the main page or create a simple one -->
+    <div class="edu-container">
+        <div class="edu-header">
+            <h1>Web Development Education</h1>
+            <p>Learn web development skills, tutorials, and resources to enhance your knowledge in modern web
+                technologies.</p>
+        </div>
+
+        <div class="edu-content">
+            <div class="edu-card">
+                <div class="edu-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>HTML & CSS Fundamentals</h3>
+                <p>Learn the building blocks of web development. Master HTML structure and CSS styling to create
+                    beautiful, responsive websites.</p>
+                <a href="#" class="edu-btn">Start Learning</a>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3>JavaScript Programming</h3>
+                <p>Dive into JavaScript to add interactivity to your websites. Learn variables, functions, DOM
+                    manipulation, and more.</p>
+                <a href="#" class="edu-btn">Start Learning</a>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design Principles</h3>
+                <p>Understand user interface and user experience design to create websites that are both beautiful and
+                    functional.</p>
+                <a href="#" class="edu-btn">Start Learning</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

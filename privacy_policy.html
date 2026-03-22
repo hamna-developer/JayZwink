@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Privacy Policy — JayZwink</title>
+<!--Favicon-->
+<link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <!-- Font Awesome for icons (already used in your site) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Theme variables: these should match the ones you provided in your main CSS -->
+    <style>
+        :root {
+            /* copy your variables block here or let page inherit them from global CSS */
+            --bg-primary: #8ec5fc;
+            --text-primary: #333;
+            --nav-bg: rgba(14, 13, 13, 0.1);
+            --nav-border: rgba(255, 255, 255, 0.2);
+            --nav-scrolled-bg: rgba(255, 255, 255, 0.9);
+            --logo-color: white;
+            --nav-link-color: white;
+            --nav-link-active-bg: linear-gradient(to right, #8ec5fc, #ff00db);
+            --nav-button-bg: linear-gradient(to right, #6cb3fa, #ff00db);
+            --hero-overlay: rgba(227, 220, 224, 0.15);
+            --heading-gradient: linear-gradient(to right, #3b9af8, #ff00db);
+            --tagline-color: #333;
+            --section-bg: rgba(255, 255, 255, 0.9);
+            --card-bg: white;
+            --card-shadow: rgba(142, 197, 252, 0.15);
+            --text-secondary: #666;
+            --text-tertiary: #555;
+            --footer-bg: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+            --footer-text: #ccc;
+            --theme-toggle-bg: rgba(255, 255, 255, 0.2);
+            --theme-toggle-icon: #333;
+            --input-bg: rgba(255, 255, 255, 0.1);
+            --input-placeholder: #ccc;
+            --border-color: rgba(255, 255, 255, 0.2);
+            --testimonial-bg: white;
+        }
+
+        /* Fallback if your site already injects variables, the page will inherit them */
+    </style>
+
+    <style>
+        /* Base / Reset */
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background .35s ease, color .35s ease;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .hero .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--hero-overlay);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.02em;
+            background: var(--heading-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            margin-top: 0.6rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem
+        }
+
+        /* Utility bar (search + actions) */
+        .utilbar {
+            max-width: 1200px;
+            margin: 1rem auto;
+            display: flex;
+            gap: .75rem;
+            padding: 0 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .util-left {
+            display: flex;
+            gap: .75rem;
+            align-items: center
+        }
+
+        .searchbox {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--card-bg);
+            padding: .6rem .75rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px var(--card-shadow);
+            min-width: 280px;
+        }
+
+        .searchbox input {
+            border: 0;
+            outline: none;
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            width: 20rem;
+        }
+
+        .util-actions {
+            display: flex;
+            gap: .5rem;
+            align-items: center
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .6rem .9rem;
+            border-radius: 10px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600;
+            background: var(--nav-button-bg);
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid rgba(0, 0, 0, 0.06)
+        }
+
+        .btn.icon {
+            padding: .5rem .6rem;
+            border-radius: 8px
+        }
+
+        /* Layout: two columns - toc + content */
+        .wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width:980px) {
+            .wrap {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Table of contents (sticky on wide screens) */
+        .toc {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 1.25rem;
+            box-shadow: 0 6px 20px var(--card-shadow);
+            position: sticky;
+            top: 1rem;
+            height: max-content;
+        }
+
+        .toc h3 {
+            margin: 0 0 .6rem 0;
+            font-size: 1.05rem;
+            color: var(--text-secondary)
+        }
+
+        .toc input {
+            width: 100%;
+            padding: .5rem .6rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: var(--input-bg);
+            color: var(--text-primary)
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: .75rem 0 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            max-height: 56vh;
+            overflow: auto
+        }
+
+        .toc a {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .45rem .55rem;
+            border-radius: 8px;
+            color: var(--text-tertiary);
+            font-size: .95rem;
+        }
+
+        .toc a.active {
+            background: linear-gradient(90deg, rgba(140, 197, 252, 0.12), rgba(255, 0, 219, 0.06));
+            color: var(--text-primary);
+            font-weight: 600
+        }
+
+        .toc .small {
+            font-size: .85rem;
+            color: var(--text-secondary)
+        }
+
+        /* Article content */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.6rem;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px var(--card-shadow);
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px)
+        }
+
+        .card h2 {
+            margin: 0 0 .6rem 0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: .6rem
+        }
+
+        .lead {
+            color: var(--text-secondary);
+            margin-bottom: .65rem
+        }
+
+        .muted {
+            color: var(--text-tertiary);
+            font-size: .98rem;
+            line-height: 1.65
+        }
+
+        /* Accordion / expandable content */
+        .accordion {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03)
+        }
+
+        .acc-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            background: transparent
+        }
+
+        .acc-btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1rem;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: left
+        }
+
+        .acc-btn:focus {
+            outline: 3px solid rgba(99, 102, 241, 0.12)
+        }
+
+        .acc-body {
+            padding: 0 1rem 1rem 1rem;
+            display: none
+        }
+
+        .acc-body.open {
+            display: block
+        }
+
+        .meta {
+            display: flex;
+            gap: .6rem;
+            flex-wrap: wrap;
+            margin-top: .6rem
+        }
+
+        .badge {
+            background: linear-gradient(90deg, rgba(140, 197, 252, 0.12), rgba(255, 0, 219, 0.06));
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            font-size: .82rem;
+            color: var(--text-primary)
+        }
+
+        /* Small helpers */
+        .muted small {
+            color: var(--text-secondary)
+        }
+
+        .section-actions {
+            display: flex;
+            gap: .5rem;
+            align-items: center
+        }
+
+        .copy-link {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: .4rem .6rem;
+            border-radius: 8px;
+            cursor: pointer
+        }
+
+        .controls {
+            display: flex;
+            gap: .6rem;
+            align-items: center
+        }
+
+        .controls .link {
+            font-size: .95rem;
+            color: var(--text-secondary)
+        }
+
+        /* Print friendly */
+        @media print {
+            body {
+                background: #fff !important;
+                color: #000 !important
+            }
+
+            .hero,
+            .utilbar,
+            .toc,
+            .controls {
+                display: none
+            }
+
+            .wrap {
+                grid-template-columns: 1fr !important
+            }
+
+            .card {
+                box-shadow: none;
+                border-radius: 0
+            }
+        }
+
+        /* Responsive niceties */
+        @media (max-width:480px) {
+            .searchbox input {
+                width: 8rem
+            }
+
+            .toc ul {
+                max-height: 200px
+            }
+
+            .hero {
+                padding: 2.5rem 1rem
+            }
+
+            .hero h1 {
+                font-size: 1.6rem
+            }
+
+            .utilbar {
+                flex-direction: column;
+                gap: .5rem
+            }
+        }
+
+        /* subtle anchoring offset for scroll (for fixed headers if integrated) */
+        .anchor-offset {
+            scroll-margin-top: 2.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header class="hero" role="banner" aria-label="Privacy policy hero">
+        <div class="hero-inner">
+            <h1><i class="fas fa-user-shield"></i> Privacy Policy</h1>
+            <p class="lead">Comprehensive details on how JayZwink collects, uses, protects and shares your information —
+                designed for transparency and trust.</p>
+            <div class="meta" style="justify-content:center">
+                <span class="badge">Last updated: September 2025</span>
+                <span class="badge">Agency: JayZwink</span>
+                <span class="badge">Location: Hyderabad, Sindh, Pakistan</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search + actions -->
+    <div class="utilbar" role="region" aria-label="policy utilities">
+        <div class="util-left">
+            <div class="searchbox" role="search" aria-label="Search privacy policy">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input id="policySearch" type="search" placeholder="Search the policy (e.g. cookies, retention)..."
+                    aria-label="Search the privacy policy">
+            </div>
+        </div>
+
+        <div class="util-actions">
+            <div class="controls">
+                <button id="expandAll" class="btn secondary icon" title="Expand all sections"><i
+                        class="fas fa-plus"></i></button>
+                <button id="collapseAll" class="btn secondary icon" title="Collapse all sections"><i
+                        class="fas fa-minus"></i></button>
+                <button id="printBtn" class="btn icon" title="Print policy"><i class="fas fa-print"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN WRAP -->
+    <main class="wrap" role="main">
+        <!-- TOC / Sidebar -->
+        <nav class="toc" aria-label="Table of contents">
+            <h3>Contents</h3>
+            <ul id="tocList">
+                <!-- JS will populate with links for deep-linking -->
+                <li><a href="#introduction" data-target="introduction"><i class="fas fa-info-circle"></i>
+                        Introduction</a></li>
+                <li><a href="#scope" data-target="scope"><i class="fas fa-bullseye"></i> Scope</a></li>
+                <li><a href="#collection" data-target="collection"><i class="fas fa-database"></i> Information We
+                        Collect</a></li>
+                <li><a href="#use" data-target="use"><i class="fas fa-cogs"></i> How We Use Data</a></li>
+                <li><a href="#legal" data-target="legal"><i class="fas fa-balance-scale"></i> Legal Bases</a></li>
+                <li><a href="#cookies" data-target="cookies"><i class="fas fa-cookie-bite"></i> Cookies & Tracking</a>
+                </li>
+                <li><a href="#third-parties" data-target="third-parties"><i class="fas fa-share-alt"></i> Third-Party
+                        Services</a></li>
+                <li><a href="#security" data-target="security"><i class="fas fa-lock"></i> Data Security</a></li>
+                <li><a href="#retention" data-target="retention"><i class="fas fa-hourglass"></i> Data Retention</a>
+                </li>
+                <li><a href="#rights" data-target="rights"><i class="fas fa-user-check"></i> Your Rights</a></li>
+                <li><a href="#children" data-target="children"><i class="fas fa-child"></i> Children’s Privacy</a></li>
+                <li><a href="#transfers" data-target="transfers"><i class="fas fa-globe"></i> International
+                        Transfers</a></li>
+                        <li><a href="#payments" data-target="payments"><i class="fas fa-credit-card"></i> Payment Processing</a></li>
+                        <li><a href="#project-info" data-target="project-info"><i class="fas fa-project-diagram"></i> Project Information</a>
+                        </li>
+                <li><a href="#changes" data-target="changes"><i class="fas fa-sync-alt"></i> Changes to Policy</a></li>
+                <li><a href="#contact" data-target="contact"><i class="fas fa-envelope"></i> Contact & DPO</a></li>
+                
+            </ul>
+            <p class="small">Tip: Use the search box above to jump to specific terms.</p>
+        </nav>
+
+        <!-- CONTENT -->
+        <article class="content" aria-label="Privacy policy content">
+            <!-- Introduction -->
+            <section id="introduction" class="card anchor-offset" tabindex="-1" aria-labelledby="intro-title">
+                <div style="display:flex;justify-content:space-between;align-items:start;gap:1rem">
+                    <div>
+                        <h2 id="intro-title"><i class="fas fa-info-circle"></i> Introduction</h2>
+                        <p class="lead">JayZwink ("we", "our", "us") is committed to protecting and respecting your
+                            privacy. This Privacy Policy explains how we collect, use, disclose, and retain personal
+                            information when you visit our website or engage with our services.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="copy-link" data-copy="#introduction" title="Copy link to this section"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+
+                <div class="muted" style="margin-top:.8rem">
+                    <strong>Scope:</strong> This policy applies to personal data collected via our website, emails,
+                    forms, and client interactions. It does not apply to information collected offline or by third
+                    parties not acting on our behalf.
+                </div>
+            </section>
+
+            <!-- Scope -->
+            <section id="scope" class="card anchor-offset" tabindex="-1" aria-labelledby="scope-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="scope-title"><i class="fas fa-bullseye"></i> Scope</h2>
+                        <p class="muted">This policy covers:</p>
+                        <ul class="muted">
+                            <li>Visitors to our website and users of our online tools.</li>
+                            <li>Clients who communicate project requirements or make purchases.</li>
+                            <li>Candidates who apply for jobs, contractors, and partners.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#scope" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Information We Collect -->
+            <section id="collection" class="card accordion anchor-offset" tabindex="-1"
+                aria-labelledby="collection-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="collection-title"><i class="fas fa-database"></i> Information We Collect</h2>
+                        <p class="lead muted">We collect information you provide directly and data collected
+                            automatically.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#collection" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+
+                <!-- Accordion list with details to avoid long walls of text -->
+                <div class="acc-body open">
+                    <p class="muted"><strong>Categories:</strong></p>
+                    <ul class="muted">
+                        <li><strong>Personal details:</strong> name, email, phone number, company name, billing address,
+                            job title.</li>
+                        <li><strong>Project details:</strong> scope, technical requirements, files, communication logs
+                            you share.</li>
+                        <li><strong>Payment info (when required):</strong> we may collect limited payment information
+                            via secure third-party payment processors — we do not store full card data on our systems.
+                        </li>
+                        <li><strong>Usage & technical data:</strong> IP address, device information, browser type,
+                            operating system, pages visited, referrer, timestamps, performance metrics.</li>
+                        <li><strong>Support communications:</strong> chat transcripts, emails, voice notes you send to
+                            us.</li>
+                    </ul>
+
+                    <p class="muted"><strong>How we collect:</strong> directly from you (forms, emails), automatically
+                        via cookies and analytics, or from third parties (e.g., payment gateways, analytics providers).
+                        
+                    </p>
+                </div>
+            </section>
+
+            <!-- How We Use Data -->
+            <section id="use" class="card anchor-offset" tabindex="-1" aria-labelledby="use-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="use-title"><i class="fas fa-cogs"></i> How We Use Data</h2>
+                        <p class="lead muted">We process personal data to operate our business, provide services, and
+                            meet legal obligations.</p>
+
+                        <ul class="muted">
+                            <li><strong>Service delivery:</strong> to design, build, host, and maintain websites or
+                                applications you commission.</li>
+                            <li><strong>Communication:</strong> to respond to inquiries, provide quotes, schedule
+                                meetings, and send service-related updates.</li>
+                            <li><strong>Billing & payments:</strong> to manage invoices and payments (through secure
+                                third-party processors).</li>
+                            <li><strong>Improvements & analytics:</strong> to understand usage, diagnose issues, and
+                                improve our offerings.</li>
+                            <li><strong>Marketing (if opted in):</strong> to send newsletters or promotional offers when
+                                you subscribe. You can opt out anytime.</li>
+                            <li><strong>Legal compliance:</strong> to comply with laws, prevent fraud, and respond to
+                                legal requests.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <button class="copy-link" data-copy="#use" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Legal basis -->
+            <section id="legal" class="card anchor-offset" tabindex="-1" aria-labelledby="legal-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="legal-title"><i class="fas fa-balance-scale"></i> Legal Basis for Processing</h2>
+                        <p class="muted">Where applicable (e.g., for residents of jurisdictions with data protection
+                            laws like GDPR), we rely on one or more lawful bases:</p>
+                        <ul class="muted">
+                            <li><strong>Contract:</strong> processing necessary to perform a contract with you (e.g.,
+                                delivering a website you hired us to build).</li>
+                            <li><strong>Consent:</strong> where you have provided consent (e.g., marketing emails).</li>
+                            <li><strong>Legitimate interests:</strong> such as improving services, fraud prevention, or
+                                direct communications where balanced against your rights.</li>
+                            <li><strong>Legal obligation:</strong> to comply with laws or court orders.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#legal" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cookies -->
+            <section id="cookies" class="card anchor-offset" tabindex="-1" aria-labelledby="cookies-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div style="flex:1">
+                        <h2 id="cookies-title"><i class="fas fa-cookie-bite"></i> Cookies & Tracking</h2>
+                        <p class="lead muted">We use cookies and similar technologies to provide core functionality and
+                            analytics.</p>
+
+                        <h4 style="margin:.6rem 0 .2rem 0">Types of cookies</h4>
+                        <ul class="muted">
+                            <li><strong>Essential:</strong> required for site functionality (forms, security).</li>
+                            <li><strong>Performance & analytics:</strong> to measure site usage (e.g., Google
+                                Analytics).</li>
+                            <li><strong>Functional:</strong> remember preferences and settings.</li>
+                            <li><strong>Advertising:</strong> when used, to deliver relevant ads — we only use such
+                                services with consent where required by law.</li>
+                        </ul>
+
+                        <p class="muted">You can manage cookie preferences in your browser. Note that disabling certain
+                            cookies may affect site functionality.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#cookies" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Third-party -->
+            <section id="third-parties" class="card anchor-offset" tabindex="-1" aria-labelledby="third-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="third-title"><i class="fas fa-share-alt"></i> Third-Party Services</h2>
+                        <p class="muted">We may share personal data with trusted third-party providers who perform services on our behalf,
+                            including:</p>
+                        <ul class="muted">
+                            <li>Hosting and infrastructure providers (e.g., Netlify)</li>
+                            <li>Version control and collaboration platforms (e.g., GitHub)</li>
+                            <li>Payment processors (e.g., Bank Transfer, Easypaisa, JazzCash, Wise, Payoneer, etc.)</li>
+                            <li>Analytics providers (e.g., Google Analytics)</li>
+                            <li>Support and communication platforms (email, chat)</li>
+                        </ul>
+
+                        <p class="muted"><strong>Note:</strong> We require third parties to implement appropriate
+                            security measures and process data only on our instructions.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#third-parties" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security -->
+            <section id="security" class="card anchor-offset" tabindex="-1" aria-labelledby="security-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="security-title"><i class="fas fa-lock"></i> Data Security</h2>
+                        <p class="muted">We implement technical and organizational measures to protect personal data:
+                        </p>
+                        <ul class="muted">
+                            <li>Encryption of data in transit (HTTPS/TLS).</li>
+                            <li>Access controls and least-privilege access for staff.</li>
+                            <li>Regular security testing and updates.</li>
+                            <li>Incident response procedures for potential breaches.</li>
+                        </ul>
+                        <p class="muted">Although we use reasonable measures, no system is 100% secure. If a breach
+                            occurs, we will follow applicable laws to notify affected individuals and authorities where
+                            required.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#security" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Retention -->
+            <section id="retention" class="card anchor-offset" tabindex="-1" aria-labelledby="retention-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="retention-title"><i class="fas fa-hourglass"></i> Data Retention</h2>
+                        <p class="muted">We retain personal data only as long as necessary to fulfill the purposes
+                            described or as required by law.</p>
+                        <ul class="muted">
+                            <li>Transactional records: retained for accounting, tax, or legal obligations (typical
+                                retention: 6–7 years depending on jurisdiction).</li>
+                            <li>Project data: retained while account is active and for a reasonable period after
+                                completion for support & maintenance.</li>
+                            <li>Marketing records: until you unsubscribe or withdraw consent.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#retention" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rights -->
+            <section id="rights" class="card anchor-offset" tabindex="-1" aria-labelledby="rights-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="rights-title"><i class="fas fa-user-check"></i> Your Rights</h2>
+                        <p class="muted">Depending on your jurisdiction, you may have rights including:</p>
+                        <ul class="muted">
+                            <li>Access: request a copy of your data.</li>
+                            <li>Rectification: correct inaccurate data.</li>
+                            <li>Deletion: request erasure where lawful.</li>
+                            <li>Restriction or objection to processing.</li>
+                            <li>Data portability where applicable.</li>
+                        </ul>
+                        <p class="muted">To exercise any right, contact us (see Contact section). We may need to verify
+                            your identity before fulfilling requests.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#rights" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Children -->
+            <section id="children" class="card anchor-offset" tabindex="-1" aria-labelledby="children-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="children-title"><i class="fas fa-child"></i> Children’s Privacy</h2>
+                        <p class="muted">Our services are not directed to children under 13 (or greater age where
+                            required). We do not knowingly collect personal data from children. If you believe we have
+                            collected data from a child, please contact us to request deletion.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#children" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Transfers -->
+            <section id="transfers" class="card anchor-offset" tabindex="-1" aria-labelledby="transfers-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="transfers-title"><i class="fas fa-globe"></i> International Transfers</h2>
+                        <p class="muted">If we transfer personal data outside your country, we will implement
+                            appropriate safeguards (e.g., standard contractual clauses) to ensure adequate protection in
+                            accordance with applicable laws.</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#transfers" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+            <!-- Payment Processing -->
+            <section id="payments" class="card anchor-offset" tabindex="-1" aria-labelledby="payments-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="payments-title"><i class="fas fa-credit-card"></i> Payment Processing</h2>
+                        <p class="muted">We use trusted third-party payment providers to process transactions securely.</p>
+            
+                        <ul class="muted">
+                            <li><strong>Payment methods:</strong> We accept Bank Transfer, Easypaisa, JazzCash, Wise (formerly
+                                TransferWise), and Payoneer.</li>
+                            <li><strong>Deposit requirements:</strong> For larger projects, we typically require a 50% deposit
+                                before work begins.</li>
+                            <li><strong>Balance payment:</strong> The remaining balance is due upon project completion and approval.
+                            </li>
+                            <li><strong>Security:</strong> All payment information is processed through secure, encrypted channels.
+                            </li>
+                            <li><strong>Data handling:</strong> We do not store full payment details on our servers.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#payments" title="Copy link"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+<!-- Project Information -->
+<section id="project-info" class="card anchor-offset" tabindex="-1" aria-labelledby="project-info-title">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+            <h2 id="project-info-title"><i class="fas fa-project-diagram"></i> Project Information & Estimation</h2>
+            <p class="muted">How we handle project details and estimation processes.</p>
+
+            <ul class="muted">
+                <li><strong>Project estimation:</strong> We provide accurate quotes after reviewing your specific
+                    project requirements.</li>
+                <li><strong>Requirements gathering:</strong> We collect detailed information about your project needs to
+                    determine scope, timeline, and final pricing.</li>
+                <li><strong>Cost determination:</strong> Final project costs are determined based on the complexity,
+                    features, and timeline of your project.</li>
+                <li><strong>Data usage:</strong> Project information is used solely for delivering the requested
+                    services and is kept confidential.</li>
+            </ul>
+        </div>
+        <div>
+            <button class="copy-link" data-copy="#project-info" title="Copy link"><i class="fas fa-link"></i></button>
+        </div>
+    </div>
+</section>
+            <!-- Changes -->
+            <section id="changes" class="card anchor-offset" tabindex="-1" aria-labelledby="changes-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                        <h2 id="changes-title"><i class="fas fa-sync-alt"></i> Changes to This Policy</h2>
+                        <p class="muted">We may update this policy to reflect changes in our practices or legal
+                            requirements. We will post the updated policy with a revised "Last updated" date. For
+                            material changes, we may provide prominent notice (e.g., email or site banner).</p>
+                    </div>
+                    <div>
+                        <button class="copy-link" data-copy="#changes" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="card anchor-offset" tabindex="-1" aria-labelledby="contact-title">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div style="flex:1">
+                        <h2 id="contact-title"><i class="fas fa-envelope"></i> Contact & Data Protection Officer</h2>
+                        <p class="muted">If you have questions, requests, or complaints about this Privacy Policy or our
+                            processing of personal data, contact us:</p>
+                        <ul class="muted">
+                            <li><strong>Email:</strong> zwinkjay@gmail.com</li>
+                            <li><strong>Address:</strong> Hyderabad, Sindh, Pakistan</li>
+                            <li><strong>Phone:</strong>+92 348 0067135 (WhatsApp Only)</li>
+                        </ul>
+                        <p class="muted">If you're in a jurisdiction with a supervisory authority (e.g., data protection
+                            regulator), you may also lodge a complaint.</p>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:.5rem;align-items:flex-end">
+                        <div class="small muted">Want a PDF?</div>
+                        <div style="display:flex;gap:.6rem">
+                            <button id="downloadPdf" class="btn secondary">Download (PDF)</button>
+                            <button id="mailtoBtn" class="btn">Email Us</button>
+                        </div>
+                        <button class="copy-link" data-copy="#contact" title="Copy link"><i
+                                class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer
+        style="margin-top:2.5rem;background:var(--footer-bg);color:var(--footer-text);padding:2rem 1rem;text-align:center">
+        <div style="max-width:1200px;margin:0 auto">
+            <div style="display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap">
+                <div style="display:flex;gap:.75rem;align-items:center">
+                    <strong>JayZwink</strong>
+                    <span class="muted small">— Web development & design</span>
+                </div>
+                <div style="display:flex;gap:.75rem;align-items:center">
+                    <small>© <span id="year"></span> JayZwink. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT: accordion, search, toc highlight, copy links, download (print-based PDF) -->
+    <script>
+        (function () {
+            // Utilities
+            const qs = sel => document.querySelector(sel);
+            const qsa = sel => Array.from(document.querySelectorAll(sel));
+            const yearEl = qs('#year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Copy link buttons
+            qsa('.copy-link').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const selector = btn.getAttribute('data-copy');
+                    const url = new URL(window.location);
+                    url.hash = selector.replace('#', '');
+                    navigator.clipboard?.writeText(url.toString()).then(() => {
+                        btn.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(() => btn.innerHTML = '<i class="fas fa-link"></i>', 1200);
+                    }).catch(() => {
+                        // fallback
+                        prompt('Copy this link:', url.toString());
+                    });
+                });
+            });
+
+            // Accordion behavior (for items that have .accordion)
+            // Here we only have a couple of acc bodies; make all collapsible by toggling class
+            // We add an expand/collapse control for all sections with .anchor-offset
+            qsa('.card').forEach(card => {
+                const header = card.querySelector('h2');
+                const id = card.getAttribute('id');
+                // Add toggle button for long sections (we'll add to some manual ones)
+                // Already used copy links for actions; keep accordion simple (only the explicit accordion for collection exists)
+            });
+
+            // Expand/Collapse all
+            const expandAll = qs('#expandAll');
+            const collapseAll = qs('#collapseAll');
+            const accBodies = qsa('.acc-body');
+
+            function setAcc(open) {
+                accBodies.forEach(b => {
+                    if (open) b.classList.add('open');
+                    else b.classList.remove('open');
+                });
+            }
+            expandAll?.addEventListener('click', () => setAcc(true));
+            collapseAll?.addEventListener('click', () => setAcc(false));
+
+            // Print and Download simulation
+            qs('#printBtn')?.addEventListener('click', () => window.print());
+            qs('#downloadPdf')?.addEventListener('click', () => {
+                // Simpler approach: print to PDF via browser
+                window.print();
+            });
+            qs('#mailtoBtn')?.addEventListener('click', () => {
+                window.location.href = 'mailto:support@jayzwink.com?subject=Privacy%20Policy%20Inquiry';
+            });
+
+            // Search: highlight matching sections and scroll first match into view
+            const searchInput = qs('#policySearch');
+            const tocLinks = qsa('.toc a');
+            const sections = qsa('article .card');
+
+            function searchPolicy(query) {
+                const q = (query || '').trim().toLowerCase();
+                if (!q) {
+                    sections.forEach(s => s.style.display = '');
+                    tocLinks.forEach(a => a.style.display = '');
+                    return;
+                }
+                let firstFound = null;
+                sections.forEach(sec => {
+                    const text = sec.textContent.toLowerCase();
+                    if (text.includes(q)) {
+                        sec.style.display = '';
+                        if (!firstFound) firstFound = sec;
+                    } else sec.style.display = 'none';
+                });
+                tocLinks.forEach(a => {
+                    const target = a.getAttribute('data-target');
+                    const sec = document.getElementById(target);
+                    a.style.display = sec && sec.style.display !== 'none' ? '' : 'none';
+                });
+                if (firstFound) {
+                    firstFound.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Add subtle flash
+                    firstFound.animate([{ background: '#ffffe0' }, { background: '' }], { duration: 900 });
+                }
+            }
+
+            let searchDebounce;
+            searchInput?.addEventListener('input', (e) => {
+                clearTimeout(searchDebounce);
+                searchDebounce = setTimeout(() => searchPolicy(e.target.value), 240);
+            });
+
+            // TOC click -> smooth scroll & set active
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('data-target');
+                    const node = document.getElementById(target);
+                    if (node) {
+                        node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // update hash without jumping:
+                        history.replaceState(null, '', '#' + target);
+                        setActiveToc(target);
+                        // focus the section for accessibility
+                        node.focus();
+                    }
+                });
+            });
+
+            // Highlight active TOC based on scroll
+            const allTargets = qsa('.wrap article section[id]');
+            function setActiveToc(id) {
+                tocLinks.forEach(a => a.classList.toggle('active', a.getAttribute('data-target') === id));
+            }
+
+            // IntersectionObserver for active section
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActiveToc(entry.target.id);
+                    }
+                });
+            }, { root: null, rootMargin: '-30% 0px -50% 0px', threshold: 0 });
+            allTargets.forEach(t => observer.observe(t));
+
+            // On load: open section if hash present
+            if (location.hash) {
+                const h = location.hash.replace('#', '');
+                const node = document.getElementById(h);
+                if (node) { setTimeout(() => node.scrollIntoView({ behavior: 'smooth' }), 200); }
+            }
+
+            // Accessibility: keyboard shortcut / focus for search (press / )
+            window.addEventListener('keydown', (e) => {
+                if (e.key === '/' && document.activeElement.tagName.toLowerCase() !== 'input') {
+                    e.preventDefault();
+                    searchInput?.focus();
+                }
+            });
+
+            // Optional: if you want to auto-collapse other acc-bodies when opening one (accordion behavior)
+            qsa('.acc-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const parent = btn.closest('.acc-item');
+                    const body = parent?.querySelector('.acc-body');
+                    if (!body) return;
+                    const open = body.classList.contains('open');
+                    if (open) body.classList.remove('open');
+                    else body.classList.add('open');
+                });
+            });
+
+            // Provide keyboard accessible focus for cards (optional)
+            qsa('.card').forEach(c => {
+                c.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && c.querySelector('.acc-body')) {
+                        const body = c.querySelector('.acc-body');
+                        body.classList.toggle('open');
+                    }
+                });
+            });
+
+            // Smooth focus style for copy-link ~ revert text after some time handled above
+        })();
+    </script>
+</body>
+
+</html>

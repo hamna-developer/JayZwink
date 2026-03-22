@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- improved viewport for better mobile scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <title>Terms & Conditions — JayZwink (mobile‑ready)</title>
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ----- GLOBAL & VARIABLES (unchanged) ----- */
+        :root {
+            --bg-primary: #8ec5fc;
+            --text-primary: #333;
+            --nav-button-bg: linear-gradient(to right, #6cb3fa, #ff00db);
+            --heading-gradient: linear-gradient(to right, #3b9af8, #ff00db);
+            --card-bg: white;
+            --card-shadow: rgba(142, 197, 252, 0.15);
+            --text-secondary: #666;
+            --text-tertiary: #555;
+            --footer-bg: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+            --footer-text: #ccc;
+            --hero-overlay: rgba(227, 220, 224, 0.15);
+            --accent-color: #3b9af8;
+            --border-color: rgba(142, 197, 252, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            /* improve text readability on small displays */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff00db;
+        }
+
+        /* ----- HERO (mobile fine-tuning) ----- */
+        .hero {
+            position: relative;
+            padding: 3rem 1rem 2.5rem;
+            /* reduced top padding on mobile */
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--hero-overlay);
+            z-index: 1;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            /* fluid typography */
+            background: var(--heading-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            word-break: break-word;
+        }
+
+        .hero p {
+            margin-top: .6rem;
+            color: rgba(255, 255, 255, .9);
+            font-size: 1rem;
+            /* slightly smaller base */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .meta {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, rgba(140, 197, 252, 0.12), rgba(255, 0, 219, 0.06));
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            /* smaller for narrow screens */
+            color: var(--text-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+
+        .badge i {
+            font-size: 0.8rem;
+        }
+
+        /* ----- MAIN LAYOUT (grid → stacked on mobile) ----- */
+        .wrap {
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        /* tablet and mobile */
+        @media (max-width: 980px) {
+            .wrap {
+                grid-template-columns: 1fr;
+                /* single column */
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+        }
+
+        /* TOC card: becomes sticky top with horizontal scroll on mobile if needed, but we keep block */
+        .toc {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.2rem;
+            box-shadow: 0 8px 25px var(--card-shadow);
+            position: sticky;
+            top: 1rem;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .toc h3 {
+            margin: 0 0 0.8rem 0;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        /* make TOC links more touch-friendly */
+        .toc a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 0.8rem;
+            border-radius: 12px;
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            min-height: 44px;
+            /* iOS tap target */
+        }
+
+        .toc a:hover {
+            background: rgba(140, 197, 252, 0.2);
+        }
+
+        .toc a.active {
+            background: linear-gradient(90deg, rgba(140, 197, 252, 0.12), rgba(255, 0, 219, 0.06));
+            color: var(--text-primary);
+            font-weight: 600;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .toc a i {
+            width: 22px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* content cards */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem 1.2rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 25px var(--card-shadow);
+            transition: transform 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .card:active {
+            transform: scale(1.01);
+            /* subtle mobile feedback */
+        }
+
+        .card h2 {
+            margin: 0 0 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            word-break: break-word;
+        }
+
+        .card h2 i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .section-title {
+            flex: 1;
+        }
+
+        .section-title p.muted {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+        }
+
+        .copy-link {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 0.9rem;
+            border-radius: 40px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            font-size: 1rem;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .copy-link:hover {
+            background: rgba(140, 197, 252, 0.2);
+            color: var(--accent-color);
+        }
+
+        /* terms list items */
+        .terms-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .terms-list li {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .terms-list li:last-child {
+            border-bottom: none;
+        }
+
+        .terms-list li i {
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+            font-size: 1rem;
+            width: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .terms-list .list-content {
+            flex: 1;
+        }
+
+        .terms-list h4 {
+            margin-bottom: 0.2rem;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+        }
+
+        .terms-list p {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background: linear-gradient(90deg, rgba(140, 197, 252, 0.08), rgba(255, 0, 219, 0.04));
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* additional mobile fine‑tuning under 600px */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .hero {
+                padding: 2rem 0.8rem 2rem;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+                padding: 0.35rem 0.7rem;
+            }
+
+            .card {
+                padding: 1.2rem 1rem;
+                border-radius: 20px;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+            }
+
+            .toc {
+                padding: 1rem;
+                max-height: 300px;
+                /* let it be tall but scrollable */
+            }
+
+            .toc a {
+                padding: 0.7rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .copy-link {
+                align-self: flex-end;
+                padding: 0.5rem 1rem;
+            }
+
+            .terms-list li {
+                flex-direction: row;
+                /* keep icon inline, don't stack */
+                gap: 0.8rem;
+            }
+
+            .terms-list li i {
+                margin-top: 0.1rem;
+            }
+        }
+
+        /* very small devices (<=380) */
+        @media (max-width: 380px) {
+            .terms-list li {
+                gap: 0.5rem;
+            }
+
+            .terms-list li i {
+                width: 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .badge {
+                white-space: normal;
+                /* allow wrap */
+                word-break: keep-all;
+            }
+        }
+
+        /* touch friendly tweaks */
+        button,
+        .toc a,
+        .copy-link {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .copy-link i {
+            pointer-events: none;
+        }
+
+        /* fix for sticky TOC on very small height */
+        @media (max-height: 700px) {
+            .toc {
+                position: relative;
+                top: 0;
+                max-height: 40vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <h1><i class="fas fa-file-contract"></i> Terms & Conditions</h1>
+            <p class="lead">Governing your use of JayZwink services — clearly outlining rights, responsibilities, and
+                processes for our web development services.</p>
+            <div class="meta">
+                <span class="badge"><i class="fas fa-calendar-alt"></i> Last updated: September 2025</span>
+                <span class="badge"><i class="fas fa-building"></i> Agency: JayZwink</span>
+                <span class="badge"><i class="fas fa-map-marker-alt"></i> Hyderabad, Sindh, Pakistan</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <!-- TOC – scrollable on mobile -->
+        <nav class="toc" aria-label="Table of contents">
+            <h3>Contents</h3>
+            <ul>
+                <li><a href="#introduction" class="active"><i class="fas fa-info-circle"></i> Introduction</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Services Overview</a></li>
+                <li><a href="#payments"><i class="fas fa-credit-card"></i> Payments & Pricing</a></li>
+                <li><a href="#intellectual-property"><i class="fas fa-copyright"></i> Intellectual Property</a></li>
+                <li><a href="#user-content"><i class="fas fa-file-alt"></i> User Content</a></li>
+                <li><a href="#account"><i class="fas fa-user-circle"></i> Account Responsibilities</a></li>
+                <li><a href="#liability"><i class="fas fa-shield-alt"></i> Limitations of Liability</a></li>
+                <li><a href="#termination"><i class="fas fa-power-off"></i> Termination</a></li>
+                <li><a href="#disputes"><i class="fas fa-gavel"></i> Dispute Resolution</a></li>
+                <li><a href="#changes"><i class="fas fa-edit"></i> Changes to Terms</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Information</a></li>
+            </ul>
+        </nav>
+
+        <article class="content">
+
+            <section id="introduction" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+                        <p class="muted">Welcome to JayZwink's Terms & Conditions. These terms govern your use of our
+                            web development and design services.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <div class="highlight-box">
+                    <p>By accessing our website, engaging our services, or making a payment, you acknowledge that you
+                        have read, understood, and agree to be bound by these Terms & Conditions.</p>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div class="list-content">
+                            <h4>Agreement to Terms</h4>
+                            <p>These terms constitute a legally binding agreement between you and JayZwink regarding
+                                your use of our services.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-check"></i>
+                        <div class="list-content">
+                            <h4>Eligibility</h4>
+                            <p>You must be at least 18 years of age or have parental/guardian consent to use our
+                                services. By using our services, you represent that you meet these requirements.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <div class="list-content">
+                            <h4>Jurisdiction</h4>
+                            <p>These terms are governed by the laws of Pakistan, specifically the province of Sindh
+                                where JayZwink is based.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="services" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-cogs"></i> Services Overview</h2>
+                        <p class="muted">Details about the web development and design services we provide.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-laptop-code"></i>
+                        <div class="list-content">
+                            <h4>Service Description</h4>
+                            <p>JayZwink provides custom web development, design, and related digital services as
+                                detailed in project proposals and agreements.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clipboard-check"></i>
+                        <div class="list-content">
+                            <h4>Project Scope</h4>
+                            <p>Services are provided according to the specifications outlined in the project proposal,
+                                estimate, or statement of work agreed upon by both parties.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-exchange-alt"></i>
+                        <div class="list-content">
+                            <h4>Revisions</h4>
+                            <p>We include a reasonable number of revisions based on the project package selected.
+                                Additional revisions may incur extra charges.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div class="list-content">
+                            <h4>Timelines</h4>
+                            <p>Project timelines are estimates and may change based on project complexity, client
+                                responsiveness, and revision requests.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="payments" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-credit-card"></i> Payments & Pricing</h2>
+                        <p class="muted">Our payment terms, methods, and pricing structure.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="list-content">
+                            <h4>Payment Methods</h4>
+                            <p>We accept Bank Transfer, Easypaisa, JazzCash, Wise (formerly TransferWise), and Payoneer.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-money-check-alt"></i>
+                        <div class="list-content">
+                            <h4>Deposit Requirement</h4>
+                            <p>For larger projects, we typically require a 50% deposit before work begins, with the
+                                balance due upon project completion.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <div class="list-content">
+                            <h4>Pricing Structure</h4>
+                            <p>Final project costs are determined after reviewing your specific requirements. All prices
+                                are quoted in USD or PKR unless otherwise specified.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div class="list-content">
+                            <h4>Payment Terms</h4>
+                            <p>Invoices are due upon receipt unless otherwise specified. Late payments may incur fees or
+                                result in project pausing.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-ban"></i>
+                        <div class="list-content">
+                            <h4>Refund Policy</h4>
+                            <p>Due to the custom nature of our services, refunds are limited and evaluated on a
+                                case-by-case basis. Deposits are generally non-refundable.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="intellectual-property" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-copyright"></i> Intellectual Property</h2>
+                        <p class="muted">Rights related to the work we create and the materials you provide.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="list-content">
+                            <h4>Client Materials</h4>
+                            <p>You retain ownership of all materials you provide to us for use in your project (logos,
+                                content, images, etc.).</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-code"></i>
+                        <div class="list-content">
+                            <h4>Final Deliverables</h4>
+                            <p>Upon full payment, you receive ownership of the final designed website or product as
+                                outlined in our agreement.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-tools"></i>
+                        <div class="list-content">
+                            <h4>JayZwink's Tools</h4>
+                            <p>We retain rights to our proprietary tools, code libraries, frameworks, and processes used
+                                to create your project.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-gavel"></i>
+                        <div class="list-content">
+                            <h4>Copyright Protection</h4>
+                            <p>You may not copy, reverse engineer, or redistribute our proprietary work without explicit
+                                written permission.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="user-content" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-file-alt"></i> User Content</h2>
+                        <p class="muted">Policies regarding content you provide for your project.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div class="list-content">
+                            <h4>Content Ownership</h4>
+                            <p>You retain ownership of content you provide but grant JayZwink permission to use it to
+                                deliver requested services.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="list-content">
+                            <h4>Prohibited Content</h4>
+                            <p>You may not submit illegal, offensive, or copyrighted materials that you don't have
+                                rights to use.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-shield"></i>
+                        <div class="list-content">
+                            <h4>Content Responsibility</h4>
+                            <p>You are solely responsible for the accuracy, quality, and legality of content you
+                                provide.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="account" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-user-circle"></i> Account Responsibilities</h2>
+                        <p class="muted">Your obligations when using our services.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-key"></i>
+                        <div class="list-content">
+                            <h4>Account Security</h4>
+                            <p>You are responsible for maintaining the confidentiality of your account credentials and
+                                for all activities under your account.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <div class="list-content">
+                            <h4>Accurate Information</h4>
+                            <p>You must provide accurate and complete information when creating an account or engaging
+                                our services.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-bell"></i>
+                        <div class="list-content">
+                            <h4>Notification</h4>
+                            <p>You must promptly notify us of any unauthorized use of your account or any other security
+                                breach.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="liability" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-shield-alt"></i> Limitations of Liability</h2>
+                        <p class="muted">Understanding the limits of our responsibilities.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div class="list-content">
+                            <h4>Service "As Is"</h4>
+                            <p>Our services are provided "as is" without warranties of any kind, either express or
+                                implied.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line"></i>
+                        <div class="list-content">
+                            <h4>Indirect Damages</h4>
+                            <p>JayZwink is not liable for any indirect, incidental, special, consequential, or punitive
+                                damages.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-lock"></i>
+                        <div class="list-content">
+                            <h4>Maximum Liability</h4>
+                            <p>Our total liability for any claim related to our services is limited to the amount you
+                                paid for those services.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="termination" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-power-off"></i> Termination</h2>
+                        <p class="muted">Conditions under which services may be suspended or terminated.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-ban"></i>
+                        <div class="list-content">
+                            <h4>Termination by JayZwink</h4>
+                            <p>We may suspend or terminate your access to services for violation of these terms,
+                                non-payment, or unlawful activities.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle"></i>
+                        <div class="list-content">
+                            <h4>Termination by Client</h4>
+                            <p>You may stop using our services at any time, though paid amounts are generally
+                                non-refundable.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-eraser"></i>
+                        <div class="list-content">
+                            <h4>Effect of Termination</h4>
+                            <p>Upon termination, your right to use our services ceases immediately, and we may delete
+                                your content after a reasonable period.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="disputes" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-gavel"></i> Dispute Resolution</h2>
+                        <p class="muted">How we handle disagreements related to our services.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <ul class="terms-list">
+                    <li>
+                        <i class="fas fa-handshake"></i>
+                        <div class="list-content">
+                            <h4>Negotiation</h4>
+                            <p>Parties agree to first attempt to resolve disputes through good faith negotiation.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-balance-scale"></i>
+                        <div class="list-content">
+                            <h4>Governing Law</h4>
+                            <p>These terms are governed by the laws of Pakistan, specifically the province of Sindh.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-landmark"></i>
+                        <div class="list-content">
+                            <h4>Amicable Resolution</h4>
+                            <p>We are committed to resolving any issues amicably and fairly without the need for formal
+                                legal proceedings.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="changes" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-edit"></i> Changes to Terms</h2>
+                        <p class="muted">How and when we may update these terms.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <div class="muted">
+                    <p>JayZwink reserves the right to modify these Terms & Conditions at any time. We will provide
+                        notice of significant changes through our website or direct communication. Your continued use of
+                        our services after changes constitutes acceptance of the updated terms.</p>
+
+                    <div class="highlight-box">
+                        <p>We encourage you to periodically review these Terms & Conditions to stay informed about our
+                            policies.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+                        <p class="muted">How to reach us with questions about these terms.</p>
+                    </div>
+                    <button class="copy-link" title="Copy link to this section"><i class="fas fa-link"></i></button>
+                </div>
+
+                <div class="muted">
+                    <p>For questions about these Terms & Conditions, please contact us at:</p>
+
+                    <ul class="terms-list">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div class="list-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:support@jayzwink.com">zwinkjay@gmail.com</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="list-content">
+                                <h4>Address</h4>
+                                <p>Hyderabad, Sindh, Pakistan</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div class="list-content">
+                                <h4>Phone/WhatsApp</h4>
+                                <p>+92 348 0067135</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 JayZwink. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.card');
+            const tocLinks = document.querySelectorAll('.toc a');
+
+            function updateActiveLink() {
+                let currentSection = '';
+                const scrollPos = window.scrollY + 150; // offset for better mobile trigger
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // smooth scroll with offset for fixed TOC
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const yOffset = -20;
+                        const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                        history.replaceState(null, null, targetId);
+                    }
+                });
+            });
+
+            // copy link with better mobile compatibility
+            const copyButtons = document.querySelectorAll('.copy-link');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const section = this.closest('.card');
+                    const sectionId = section.getAttribute('id');
+                    const url = window.location.origin + window.location.pathname + '#' + sectionId;
+
+                    if (navigator.clipboard && window.isSecureContext) {
+                        navigator.clipboard.writeText(url).then(() => {
+                            const originalHtml = this.innerHTML;
+                            this.innerHTML = '<i class="fas fa-check"></i>';
+                            setTimeout(() => {
+                                this.innerHTML = originalHtml;
+                            }, 2000);
+                        }).catch(console.error);
+                    } else {
+                        // fallback for older mobile browsers
+                        const textarea = document.createElement('textarea');
+                        textarea.value = url;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                        const originalHtml = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i>';
+                        setTimeout(() => {
+                            this.innerHTML = originalHtml;
+                        }, 2000);
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink();
+        });
+    </script>
+</body>
+
+</html>
